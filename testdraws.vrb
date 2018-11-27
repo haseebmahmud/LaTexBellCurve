@@ -1,0 +1,96 @@
+\frametitle{Bell curve}
+\begin{center}
+
+{\scalefont{.50}
+
+\begin{tikzpicture}[scale=1.3]
+	\begin{axis}
+	[
+	no markers, domain=0:8, samples=1000,
+	axis lines*=left, %xlabel=$x$, ylabel=$y$,
+	hide y axis,
+	hide x axis,
+	height=4cm, width=8cm,
+	xtick=\empty, ytick=\empty,
+	enlargelimits=false, clip=false, axis on top,
+	]
+	\addplot [very thick,mDarkTeal] {gauss(4,1)};
+	\end{axis}
+
+% heads
+	\node at (-.7,1.49) {Percentages};
+	\node at (-.7,-.3) {$\mu \pm \sigma$};
+	\node at (-.7,-.6) {Cumulative $\%$};
+
+% Percentails
+	\node at (0.4,1.49) {$.13\%$};
+	\node at (1.2,1.49) {$2.14\%$};
+	\node at (2,1.49) {$13.59\%$};
+	\node at (2.8,1.49) {$34.13\%$};
+	\node at (3.6,1.49) {$34.13\%$};
+	\node at (4.4,1.49) {$13.59\%$};
+	\node at (5.2,1.49) {$2.14\%$};
+	\node at (6,1.49) {$.13\%$};
+
+% x - sigma
+	\node at (0,-.3) {$-4\sigma$};
+	\node at (.8,-.3) {$-3\sigma$};
+	\node at (1.6,-.3) {$-2\sigma$};
+	\node at (2.4,-.3) {$-1\sigma$};
+	\node at (3.2,-.3) {$\mu$};
+	\node at (4,-.3) {$1\sigma$};
+	\node at (4.8,-.3) {$2\sigma$};
+	\node at (5.6,-.3) {$3\sigma$};
+	\node at (6.4,-.3) {$4\sigma$};
+
+% Cumulative percentages
+	\node at (.8,-.6) {$0.1\%$};
+	\node at (1.6,-.6) {$2.3\%$};
+	\node at (2.4,-.6) {$15.9\%$};
+	\node at (3.2,-.6) {$50\%$};
+	\node at (4,-.6) {$84.1\%$};
+	\node at (4.8,-.6) {$97.7\%$};
+	\node at (5.6,-.6) {$99.9\%$};
+
+
+% figures
+	\node at (3.2,2.8) {$62.28\%$};
+	\node at (3.2,3.1) {$95.44\%$};
+	\node at (3.2,3.4) {$99.72\%$};
+
+%baseline
+	\draw [mDarkTeal][-] ((0,-.1) -- (6.4,-.1);
+
+% 0
+	\draw [very thick, mLightBrown][-] ((3.2,-.1) -- (3.2,2.4);
+
+% -1 sigma
+	\draw [very thick, mLightBrown][-] ((2.4,-.1) -- (2.4,1.49);
+	\draw [very thick, mLightBrown!30][-] ((2.4, 1.49) -- (2.4,2.7);
+	\draw [very thick, mLightBrown!30][-] ((2.4, 2.685) -- (4,2.685);
+
+% -2 sigma
+	\draw [very thick, mLightBrown][-] ((1.6,-.1) -- (1.6,.34);
+	\draw [very thick, mLightBrown!30][-] (1.6, .34) -- (1.6,3);
+	\draw [very thick, mLightBrown!30][-] ((1.6, 2.985) -- (4.8,2.985);
+
+% -3 sigma
+	\draw [very thick, mLightBrown][-] ((.8,-.1) -- (.8,.05);
+	\draw [very thick, mLightBrown!30][-] (.8, 0.05) -- (0.8,3.3);
+	\draw [very thick, mLightBrown!30][-] ((.8, 3.285) -- (5.6,3.285);
+
+% 1 sigma
+	\draw [very thick, mLightBrown][-] ((4,-.1) -- (4,1.49);
+	\draw [very thick, mLightBrown!30][-] ((4, 1.49) -- (4,2.7);
+
+% 2 sigma
+	\draw [very thick, mLightBrown][-] ((4.8,-.1) -- (4.8,2.4);
+	\draw [very thick, mLightBrown!30][-] (4.8, .34) -- (4.8,3);
+
+% 3 sigma
+	\draw [very thick, mLightBrown][-] ((5.6,-.1) -- (5.6,.05);
+	\draw [very thick, mLightBrown!30][-] (5.6, .05) -- (5.6,3.3);
+
+\end{tikzpicture}
+}\\
+\end{center}
